@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMP Medical Centre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #1c2833;
+            color: #f4d03f;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+        }
+        header img {
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+        nav {
+            background-color: #1c2833;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #f4d03f;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffffff;
+        }
+        .banner {
+            background-color: #f4d03f;
+            color: #1c2833;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .banner h2 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+        }
+        .content {
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .content h3 {
+            color: #1c2833;
+        }
+        footer {
+            background-color: #1c2833;
+            color: #f4d03f;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Marquee style */
+        .scroll-text {
+            font-size: 2.5em; /* Matching banner heading size */
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #1c2833;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+        }
+        .scroll-content {
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pause in the middle */
+        .scroll-content:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image-placeholder.jpg" alt="JMP Logo or Photo">
+        <h1>JMP Medical Centre</h1>
+        <p>Managed by Peace Foundation</p>
+        <p>Piravom, Ernakulam, 686664, Kerala</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#departments">Departments</a>
+        <a href="#specialties">Specialties</a>
+        <a href="#doctors">Doctors & Departments</a>
+        <a href="#services">Services</a>
+        <a href="#future-plans">Future Plans</a>
+    </nav>
+    <div class="banner">
+        <h2>One of the Main Hospitals in Piravom</h2>
+    </div>
+
+    <div style="text-align: center; margin: 10px 0;">
+        <div class="scroll-text">
+            <div class="scroll-content">
+                For bookings call - 0485 2243443, 2242727, 2241274
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <section id="about">
+            <h3>About Us</h3>
+            <p>JMP Medical Centre is dedicated to providing exceptional healthcare services to the community. We are known for our commitment to patient care and advanced medical facilities.</p>
+        </section>
+        <section id="departments">
+            <h3>Departments</h3>
+            <p>We offer various specialized departments including Cardiology, Neurology, Pediatrics, and more.</p>
+        </section>
+        <section id="specialties">
+            <h3>Main Specialties</h3>
+            <p>Our expert specialists provide high-quality care in diverse medical fields.</p>
+        </section>
+        <section id="doctors">
+            <h3>Doctors & Departments</h3>
+            <p>Meet our team of experienced and dedicated doctors, committed to your health and well-being:</p>
+        </section>
+        <section id="services">
+            <h3>24-Hour Services</h3>
+            <p>We are here for you round-the-clock, offering emergency services and more.</p>
+        </section>
+        <section id="future-plans">
+            <h3>Future Plans</h3>
+            <p>We are constantly striving to improve and expand our services for the community.</p>
+        </section>
+    </div>
+    
+<section id="doctors-departments">
+    <h3>Doctors & Departments</h3>
+    <p>Meet our team of experienced and dedicated doctors, committed to your health and well-being:</p>
+    <h4>Dept of General Medicine</h4>
+    <ul>
+        <li>Dr. RAJEEV VENUGOPAL<br>
+        MD (Med.), DNB (Med.), D.Diab<br>
+        CONSULTANT PHYSICIAN & DIABETOLOGIST</li>
+        <li>Dr. JILU MARIA JOSEPH<br>
+        MD, DNB, General Medicine</li>
+    </ul>
+    <h4>Dept of Orthopaedics</h4>
+    <ul>
+        <li>Dr. MANOJ KUMAR J.<br>
+        (MBBS, D. ORTHO, MS ORTHO)<br>
+        ORTHOPAEDIC SURGEON</li>
+        <li>Dr. JOSEPH C. J.<br>
+        (MBBS, MS ORTHO)<br>
+        FELLOWSHIP IN SPINE SURGERY<br>
+        RESIDENT ORTHOPAEDIC SURGEON</li>
+    </ul>
+    <h4>Gynaecology (Resident)</h4>
+    <ul>
+        <li>Dr. SMITHY SANEL GEORGE<br>
+        MBBS, DGO, MD (OB&Gyn), PGDFM (Vellore), F.MAS, Dip. MAS</li>
+        <li>Dr. LAKSHMI RAJ<br>
+        MBBS, DGO, MRCOG, FMAS<br>
+        CONSULTANT OBSTETRICS AND GYNAECOLOGY</li>
+    </ul>
+</section>
+
+<footer>
+        <p>&copy; 2024 JMP Medical Centre. All rights reserved.</p>
+    </footer>
+</body>
+</html>
