@@ -401,7 +401,7 @@
     color: white; /* White text on hover */
 }
 
-/* For Larger Screens */
+/* For Larger Screens (Desktop View) */
 @media (min-width: 768px) {
     .menu-bar {
         justify-content: space-between;
@@ -409,17 +409,29 @@
 
     #menu {
         display: flex !important;
-        flex-direction: row;
+        flex-direction: row; /* Align menu items horizontally */
         justify-content: space-around;
-        max-height: none; /* Ensure it's fully expanded */
+        background: #007bff; /* Match the theme color for desktop view */
+        box-shadow: none; /* Remove shadow for desktop */
+    }
+
+    #menu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; /* Horizontally align menu items */
+        padding: 0;
+        margin: 0;
     }
 
     #menu ul li {
-        border: none;
+        border: none; /* Remove border between menu items */
     }
 
     #menu ul li a {
         padding: 10px 20px;
+        color: white; /* White text for better visibility on blue background */
+        font-size: 16px;
     }
 
     .menu-icon, .menu-label {
