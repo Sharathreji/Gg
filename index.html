@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -334,63 +333,83 @@
         display: block;
     }
     </style>
-<style>
-/* Hide mobile menu by default */
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #007bff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.hamburger-icon {
-    display: none;
-    font-size: 30px;
+ <style>
+/* General Menu Styles */
+.menu-container {
+    background-color: #007bff; /* Keep your website's current background color */
     color: white;
-    cursor: pointer;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    position: relative;
 }
 
-.desktop-menu {
+.menu-bar {
     display: flex;
-    gap: 15px;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
 }
 
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .desktop-menu {
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+/* Menu Hidden by Default */
+#menu {
+    display: none;
+    flex-direction: column;
+    background-color: #007bff;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Active Menu Display */
+#menu.show {
+    display: flex;
+}
+
+/* For Larger Screens */
+@media (min-width: 768px) {
+    .menu-icon {
         display: none;
     }
 
-    .hamburger-icon {
-        display: block;
+    #menu {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-around;
     }
-</style>
-<style>
-}
 
-/* Mobile menu links */
-.mobile-menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
-}
+    #menu ul li {
+        border: none;
+    }
 
-.mobile-menu a:hover {
-    background-color: #ffc107;
-    color: #0056b3;
+    #menu ul li a {
+        padding: 10px 20px;
+    }
 }
-</style>
+ </style>
 <body>
     <header>
         <img src="image-placeholder.jpg" alt="JMP Logo or Photo">
@@ -398,25 +417,24 @@
         <p>Managed by Peace Foundation</p>
         <p>Piravom, Ernakulam, 686664, Kerala</p>
     </header>
-   <nav>
-    <div class="hamburger-icon" onclick="toggleNav()">
-        &#9776; <!-- This is the hamburger icon (three bars) -->
+    <div class="menu-container">
+    <div class="menu-bar">
+        <button id="menu-toggle" class="menu-icon">&#9776;</button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#departments">Doctors & Departments</a>
-        <a href="#specialties">Specialties</a>
-        <a href="#services-section">Services</a>
-        <a href="#future-plans">Future Plans</a>
-    </div>
-    <div class="desktop-menu">
-        <a href="#about">About</a>
-        <a href="#departments">Doctors & Departments</a>
-        <a href="#specialties">Specialties</a>
-        <a href="#services-section">Services</a>
-        <a href="#future-plans">Future Plans</a>
-    </div>
-</nav>
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#insurance">Insurance</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
     <div class="banner">
         <h2>One of the Main Hospitals in Piravom</h2>
     </div>
@@ -577,7 +595,7 @@
                     <div class="accordion-item">
                         <button class="accordion-header">Dialysis</button>
                         <div class="accordion-content">
-                            <p>Modern dialysis units available for kidney care.</p>
+                            <p>Modern dialysis units with 24/7 availability for kidney care.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -619,14 +637,10 @@
         });
     </script>
 <script>
-function toggleNav() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenu.style.display === 'block') {
-        mobileMenu.style.display = 'none';
-    } else {
-        mobileMenu.style.display = 'block';
-    }
-}
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
+});
 </script>
 </body>
 </html>
