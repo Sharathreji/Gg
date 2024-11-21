@@ -336,7 +336,7 @@
  <style>
 /* General Menu Styles */
 .menu-container {
-    background-color: #007bff; /* Keep your website's current background color */
+    background-color: #007bff; /* Keep the primary blue color */
     color: white;
     font-family: Arial, sans-serif;
     width: 100%;
@@ -345,25 +345,36 @@
 
 .menu-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 15px;
+    cursor: pointer; /* Makes the entire bar clickable */
+    background-color: #0056b3; /* Slightly darker blue for the bar */
 }
 
 .menu-icon {
     font-size: 24px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: block;
+    margin-right: 10px;
 }
 
-/* Menu Hidden by Default */
+.menu-label {
+    font-size: 18px;
+}
+
+/* Dropdown Menu Styling */
 #menu {
     display: none;
     flex-direction: column;
-    background-color: #007bff;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef); /* Light gradient for dropdown */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+    transition: all 0.3s ease-in-out; /* Animation for dropdown appearance */
+    overflow: hidden; /* Ensures smooth dropdown effect */
+    max-height: 0; /* Initially hidden */
+}
+
+#menu.show {
+    display: flex;
+    max-height: 500px; /* Maximum dropdown height (adjustable) */
 }
 
 #menu ul {
@@ -374,31 +385,33 @@
 
 #menu ul li {
     text-align: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 #menu ul li a {
     text-decoration: none;
-    color: white;
+    color: #0056b3; /* Blue text for contrast */
     padding: 10px 15px;
     display: block;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
-/* Active Menu Display */
-#menu.show {
-    display: flex;
+#menu ul li a:hover {
+    background-color: #007bff; /* Matches main theme */
+    color: white; /* White text on hover */
 }
 
 /* For Larger Screens */
 @media (min-width: 768px) {
-    .menu-icon {
-        display: none;
+    .menu-bar {
+        justify-content: space-between;
     }
 
     #menu {
         display: flex !important;
         flex-direction: row;
         justify-content: space-around;
+        max-height: none; /* Ensure it's fully expanded */
     }
 
     #menu ul li {
@@ -407,6 +420,10 @@
 
     #menu ul li a {
         padding: 10px 20px;
+    }
+
+    .menu-icon, .menu-label {
+        display: none; /* Hide menu bar on larger screens */
     }
 }
  </style>
@@ -418,8 +435,9 @@
         <p>Piravom, Ernakulam, 686664, Kerala</p>
     </header>
     <div class="menu-container">
-    <div class="menu-bar">
-        <button id="menu-toggle" class="menu-icon">&#9776;</button>
+    <div id="menu-toggle" class="menu-bar">
+        <span class="menu-icon">&#9776;</span>
+        <span class="menu-label">Menu</span>
     </div>
     <nav id="menu" class="hidden">
         <ul>
