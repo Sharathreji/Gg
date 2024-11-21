@@ -468,7 +468,7 @@
     <div class="banner">
         <h2>One of the Main Hospitals in Piravom</h2>
     </div>
-   <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 10px;">
     <div class="scroll-text">
         <div class="scroll-content">
             For bookings call - 0485 2243443, 2242727, 2241274
@@ -477,63 +477,39 @@
 </div>
 
 <style>
-/* Enhanced Scrolling Text */
+/* Subtle Scrolling Text */
 .scroll-text {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #0056b3;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    border: 2px solid #007bff;
+    border: 1px solid #ddd;
     padding: 10px;
-    background: linear-gradient(90deg, #e3f2fd, #bbdefb);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa;
+    border-radius: 5px;
 }
 
 .scroll-content {
     display: inline-block;
-    animation: scrollEffect 20s linear infinite, colorChange 5s ease-in-out infinite;
-    padding: 0 20px;
+    animation: smoothScroll 15s linear infinite;
+    padding-right: 100%;
 }
 
-/* Smooth scrolling with bounce effect at start and end */
-@keyframes scrollEffect {
+/* Smooth scrolling effect */
+@keyframes smoothScroll {
     0% {
         transform: translateX(100%);
-    }
-    10% {
-        transform: translateX(90%);
-    }
-    90% {
-        transform: translateX(-10%);
     }
     100% {
         transform: translateX(-100%);
     }
 }
 
-/* Text color gradient animation */
-@keyframes colorChange {
-    0% {
-        color: #0056b3;
-    }
-    25% {
-        color: #ff5722;
-    }
-    50% {
-        color: #4caf50;
-    }
-    75% {
-        color: #ffc107;
-    }
-    100% {
-        color: #0056b3;
-    }
-}
-
 .scroll-content:hover {
-    animation-play-state: paused; /* Pauses animation on hover */
+    animation-play-state: paused; /* Pause animation on hover */
 }
+</style>
 </style>
     <div class="content">
         <section id="about">
