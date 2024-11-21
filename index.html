@@ -334,6 +334,63 @@
         display: block;
     }
     </style>
+<style>
+/* Hide mobile menu by default */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hamburger-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.desktop-menu {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+</style>
+<style>
+}
+
+/* Mobile menu links */
+.mobile-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    background-color: #ffc107;
+    color: #0056b3;
+}
+</style>
 <body>
     <header>
         <img src="image-placeholder.jpg" alt="JMP Logo or Photo">
@@ -341,13 +398,25 @@
         <p>Managed by Peace Foundation</p>
         <p>Piravom, Ernakulam, 686664, Kerala</p>
     </header>
-    <nav>
+   <nav>
+    <div class="hamburger-icon" onclick="toggleNav()">
+        &#9776; <!-- This is the hamburger icon (three bars) -->
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
         <a href="#about">About</a>
         <a href="#departments">Doctors & Departments</a>
         <a href="#specialties">Specialties</a>
         <a href="#services-section">Services</a>
         <a href="#future-plans">Future Plans</a>
-    </nav>
+    </div>
+    <div class="desktop-menu">
+        <a href="#about">About</a>
+        <a href="#departments">Doctors & Departments</a>
+        <a href="#specialties">Specialties</a>
+        <a href="#services-section">Services</a>
+        <a href="#future-plans">Future Plans</a>
+    </div>
+</nav>
     <div class="banner">
         <h2>One of the Main Hospitals in Piravom</h2>
     </div>
@@ -549,5 +618,15 @@
             });
         });
     </script>
+<script>
+function toggleNav() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu.style.display === 'block') {
+        mobileMenu.style.display = 'none';
+    } else {
+        mobileMenu.style.display = 'block';
+    }
+}
+</script>
 </body>
 </html>
